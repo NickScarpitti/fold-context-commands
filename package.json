@@ -1,0 +1,110 @@
+{
+	"name": "fold-context-commands",
+	"displayName": "fold-context-commands",
+	"description": "",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.105.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [],
+	"main": "./out/extension.js",
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint",
+		"lint": "eslint src",
+		"test": "vscode-test"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.105.0",
+		"@types/mocha": "^10.0.10",
+		"@types/node": "22.x",
+		"@typescript-eslint/eslint-plugin": "^8.45.0",
+		"@typescript-eslint/parser": "^8.45.0",
+		"eslint": "^9.36.0",
+		"typescript": "^5.9.3",
+		"@vscode/test-cli": "^0.0.11",
+		"@vscode/test-electron": "^2.5.2"
+	},
+	"contributes": {
+		"commands": [
+			{
+				"command": "editor.foldAll",
+				"title": "Fold All"
+			},
+			{
+				"command": "editor.unfoldAll",
+				"title": "Unfold All"
+			},
+			{
+				"command": "editor.unfoldRecursively",
+				"title": "Unfold From Cursor"
+			},
+			{
+				"command": "editor.foldAllBlockComments",
+				"title": "Fold Block Comments"
+			},
+			{
+				"command": "editor.foldAllMarkerRegions",
+				"title": "Fold Regions"
+			},
+			{
+				"command": "editor.unfoldAllMarkerRegions",
+				"title": "Unfold Regions"
+			},
+			{
+				"command": "editor.foldLevel2",
+				"title": "Fold To Definitions"
+			}
+		],
+		"submenus": [
+			{
+				"id": "foldContextMenu.submenu",
+				"label": "Folding"
+			}
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"submenu": "foldContextMenu.submenu",
+					"group": "folding",
+					"when": "editorTextFocus && foldingEnabled"
+				}
+			],
+			"foldContextMenu.submenu": [
+				{
+					"command": "editor.foldAll",
+					"group": "1_fold"
+				},
+				{
+					"command": "editor.unfoldAll",
+					"group": "1_fold@1"
+				},
+				{
+					"command": "editor.unfoldRecursively",
+					"group": "1_fold@2"
+				},
+				{
+					"command": "editor.foldAllBlockComments",
+					"group": "1_fold@3"
+				},
+				{
+					"command": "editor.foldAllMarkerRegions",
+					"group": "1_fold@4"
+				},
+				{
+					"command": "editor.unfoldAllMarkerRegions",
+					"group": "1_fold@5"
+				},
+				{
+					"command": "editor.foldLevel2",
+					"group": "1_fold@6"
+				}
+			]
+		}
+	}
+}
