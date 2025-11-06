@@ -1,11 +1,13 @@
 {
 	"name": "fold-context-commands",
+	"publisher": "nick-scarpitti",
 	"displayName": "fold-context-commands",
 	"description": "",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"engines": {
 		"vscode": "^1.105.0"
 	},
+	"repository": "https://github.com/NickScarpitti/fold-context-commands",
 	"categories": [
 		"Other"
 	],
