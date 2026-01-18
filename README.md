@@ -38,4 +38,8 @@ None
 
 Initial release of fold-context-commands.
 
+### 1.0.1
+
+Added description to package.json.
+
 ---
