@@ -3,7 +3,7 @@
 	"publisher": "nick-scarpitti",
 	"displayName": "fold-context-commands",
 	"description": "Adds folding commands to the editor context menu.",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"engines": {
 		"vscode": "^1.105.0"
 	},
